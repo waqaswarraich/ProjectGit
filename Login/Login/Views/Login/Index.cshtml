@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewBag.Title = "Welcome " + Session["Name"];
+    var user = Convert.ToInt32(Session["Role"]);
+    var role = Session["Role"];
+             if (user==3)
+             {
+                 role = "User";
+             }
+             else if (user==2)
+             {
+                  role = "Sub Admin";
+             }
+             else
+             {
+                  role = "Admin";
+             }
+
+}
+
+@if (Session["Name"] != null)
+{
+    <h1><span class="glyphicon glyphicon-user"></span> Mr. @Session["Name"] you  are  @role</h1>
+}
+
+   
+
+
+
+    
